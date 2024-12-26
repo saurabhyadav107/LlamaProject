@@ -9,15 +9,14 @@ from fastapi import FastAPI
 
 class StartStopApp:
     
-    def __init__(self, root):   #The method __init__(self, root) is a constructor in Python.self is a current instance of a class.
-        self.running = False      # this varibale is used To track the current state, is it running state or not
+    def __init__(self, root):  
+        self.running = False      
         self.audio_thread = None 
         self.stream = None
         self.p = None
-        self.frames = []  # Store audio frames to save later
-        self.model = WhisperModel("base")  # Load the Whisper model
+        self.frames = []  
+        self.model = WhisperModel("base") 
 
-        # Start Button
         self.start_button = tk.Button(root, text="Start", width=10, command=self.start)
         self.start_button.pack(pady=10)
 
